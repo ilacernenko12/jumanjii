@@ -22,6 +22,18 @@
 
 
     <style>
+        input{
+            width: 270px;
+        }
+        form{
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+        .btn-danger{
+            margin-left: 120px;
+            margin-top: -65px;
+        }
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -112,11 +124,11 @@
 
 <main>
     <form method="post">
-        <p><input type="number" placeholder="стартовая цена" name="startPrice"></p>
-        <p><input type="number" placeholder="конечная цена" name="endPrice"></p>
+        <p><input type="number" placeholder="Cтартовая цена" name="startPrice"></p>
+        <p><input type="number" placeholder="Конечная цена" name="endPrice"></p>
         <button type="submit" class="btn btn-warning">Применить</button>
+        <p><a class="btn btn-danger" href="/allitems">Сбросить фильтр</a></p>
     </form>
-    <p><a class="btn btn-danger" href="/allitems">Сбросить фильтр</a></p>
     <div class="album py-5 bg-light">
         <div class="container">
 
@@ -125,7 +137,7 @@
                     <div class="card shadow-sm">
                         <img class="bd-placeholder-img card-img-top"
                              th:src="${c.getUrl()}"
-                             width="100%" height="225" />
+                             width="100%" height="100%" />
 
                         <div class="card-body">
                             <p class="card-text" th:text="${c.getName()}"></p>

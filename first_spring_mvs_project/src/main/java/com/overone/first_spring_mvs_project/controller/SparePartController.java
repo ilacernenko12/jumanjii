@@ -22,12 +22,15 @@ public class SparePartController {
     }
 
     @PostMapping
-    public RedirectView setSparePart(@RequestParam String model_auto,
-                                     @RequestParam String spare_model,
+    public RedirectView setSparePart(@RequestParam String name,
+                                     @RequestParam String sparepart,
+                                     @RequestParam String vin,
                                      @RequestParam String price){
         SparePart sparePart = new SparePart();
-        sparePart.setModel_auto(model_auto);
-        sparePart.setSpare_model(spare_model);
+        sparePart.setName(name);
+        sparePart.setSparepart(sparepart);
+        sparePart.setVin(vin);
+        sparePart.setPrice(price);
         sparePart.setPrice(price);
 
         sparePartRepo.save(sparePart);
